@@ -16,11 +16,11 @@ type Task struct {
 
 func FindTaskById(task_id string) (*Task, error) {
 	//...
-	return nil, pkgerrors.Wrap(FakeNoDataError(), "FindTaskById:")
+	return nil, FakeNoDataError()
 }
 
 func FakeNoDataError() error {
-	return pkgerrors.Wrap(sql.ErrNoRows, "FakeNoDataError:")
+	return sql.ErrNoRows
 }
 
 type GetTaskRequest struct {
